@@ -1,0 +1,13 @@
+
+.footer{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 8vh;
+  background-color: rgba(17, 17, 17);  
+}
+
+.footer__span{
+  color: rgba(234, 69, 96)
+}
