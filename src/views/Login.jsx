@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router";
 
@@ -8,6 +8,7 @@ function Login() {
     password: "",
   });
   const [message, setMessage] = useState("");
+  const dialogref = useRef(null);
 
   const navigate = useNavigate();
 
@@ -19,7 +20,8 @@ function Login() {
 
   function handleLogin(event) {
     event.preventDefault();
-    navigate("/");
+    setMessage("Iniciando sesión de " + form.email);
+    dialogref.current.showModal();
   }
 
   return (
@@ -69,8 +71,22 @@ function Login() {
           >
             Iniciar sesion
           </button>
+          {message && <p className="login__message">{message}</p>}
         </form>
       </section>
+      <dialog className="login__dialog" aria-live="polite" ref={dialogref}>
+        <div className="login__dialog__content">
+          <p>{message}</p>
+          <button
+            className="button"
+            onClick={() => {
+              dialogref.current.close();
+            }}
+          >
+            Cerrar
+          </button>
+        </div>
+      </dialog>
     </main>
   );
 }
