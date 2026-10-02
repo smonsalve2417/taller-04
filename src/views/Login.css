@@ -69,3 +69,8 @@
   font: inherit;
   font-weight: 700;
 }
+
+.login__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

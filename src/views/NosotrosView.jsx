@@ -1,19 +1,15 @@
 import Header from "../components/Header";
-import Hero from "../components/Hero";
-import Mid from "../components/Mid";
 import Bottom from "../components/Bottom";
 import Footer from "../components/Footer";
 
-function Principal() {
+function NosotrosView() {
   return (
-    <div className="app-shell">
+    <>
       <Header />
-      <Hero />
-      <Mid />
       <Bottom />
       <Footer />
-    </div>
+    </>
   );
 }
 
-export default Principal;
+export default NosotrosView;

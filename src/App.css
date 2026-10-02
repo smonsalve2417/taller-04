@@ -4,25 +4,45 @@
   padding: 0;
 }
 
+html,
+body,
+#root {
+  min-height: 100vh;
+}
+
+body {
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-
-.heading{
+.heading {
   font-family: var(--heading);
   font-weight: 600;
   font-size: 50px;
 }
 
-.subheading{
+.subheading {
   font-family: var(--heading);
-  color:rgba(103, 97, 99);
+  color: rgba(103, 97, 99);
   font-weight: 400;
   font-size: 15px;
 }
 
-.button{
+.button {
   background-color: rgba(233, 69, 96);
   color: white;
   font-size: 18px;
@@ -33,12 +53,11 @@ html {
   cursor: pointer;
 }
 
-.button--curso{
+.button--curso {
   font-size: 13px;
   font-weight: 700;
   padding: 7px 12px;
 }
-
 
 .button--circle {
   width: 50px;

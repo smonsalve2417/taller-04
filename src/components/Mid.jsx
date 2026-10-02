@@ -1,46 +1,49 @@
-import CourseCard from "./CourseCard"
+import CourseCard from "./CourseCard";
 
-import './Mid.css'
+import "./Mid.css";
 
 const cursos = [
   {
     id: 1,
     emoji: "⚛️",
     titulo: "React basico",
-    descripcion: "Componentes, props, estado y eventos. Todo lo que necesitas para empezar.",
-    buttonText: "Principiante"
+    descripcion:
+      "Componentes, props, estado y eventos. Todo lo que necesitas para empezar.",
+    buttonText: "Principiante",
   },
   {
     id: 2,
     emoji: "🔁",
     titulo: "React Hooks",
-    descripcion: "Profundiza en useState, useEffect y crea tus propios custom hooks.",
-    buttonText: "Intermedio"
+    descripcion:
+      "Profundiza en useState, useEffect y crea tus propios custom hooks.",
+    buttonText: "Intermedio",
   },
   {
     id: 3,
     emoji: "📂",
     titulo: "Estado Global",
     descripcion: "Gestiona el estado con Context API y aprende cuando usarlo.",
-    buttonText: "Intermedio"
+    buttonText: "Intermedio",
   },
   {
     id: 4,
     emoji: "🚀",
     titulo: "React Avanzando",
-    descripcion: "Rendimiento, patrones avanzados y arquitectura para proyectos grandes.",
-    buttonText: "Avanzado"
-  }
-]
+    descripcion:
+      "Rendimiento, patrones avanzados y arquitectura para proyectos grandes.",
+    buttonText: "Avanzado",
+  },
+];
 
-function Mid() {
+function Mid({ className }) {
   return (
-    <div className="mid" id="cursos">
+    <div className={`mid ${className}`} id="cursos">
       <p className="mid__heading">Nuestros Cursos</p>
-      <p className="subheading">Elige el camino que mejor se adapte a ti</p>  
-      
+      <p className="subheading">Elige el camino que mejor se adapte a ti</p>
+
       <div className="cursos">
-        {cursos.map((curso) =>
+        {cursos.map((curso) => (
           <CourseCard
             key={curso.id}
             emoji={curso.emoji}
@@ -48,12 +51,12 @@ function Mid() {
             descripcion={curso.descripcion}
             buttonText={curso.buttonText}
           />
-        )}
+        ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Mid
+export default Mid;
 
 //hero
