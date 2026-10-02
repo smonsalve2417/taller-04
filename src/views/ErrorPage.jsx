@@ -1,4 +1,5 @@
-import Header from "./Header";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "./ErrorPage.css";
 function ErrorPage() {
   return (
@@ -9,7 +10,11 @@ function ErrorPage() {
         <p className="error__message">
           The page you are looking for does not exist.
         </p>
+        <button className="button" onClick={() => window.history.back()}>
+          Volver atrás
+        </button>
       </main>
+      <Footer />
     </>
   );
 }

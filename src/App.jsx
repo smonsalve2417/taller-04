@@ -4,7 +4,7 @@ import Bottom from "./components/Bottom";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router";
 import Principal from "./views/principal";
-import ErrorPage from "./components/ErrorPage";
+import ErrorPage from "./views/ErrorPage";
 import Login from "./views/Login";
 import CursosView from "./views/CursosView";
 import NosotrosView from "./views/NosotrosView";
