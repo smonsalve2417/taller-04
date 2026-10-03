@@ -10,7 +10,7 @@
 }
 
 .mid__view {
-  min-height: 52vh;
+  flex: 1;
 }
 
 .mid__heading {

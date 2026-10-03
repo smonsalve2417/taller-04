@@ -9,6 +9,8 @@ function Login() {
   });
   const [message, setMessage] = useState("");
   const dialogref = useRef(null);
+  const mailref = useRef(null);
+  const passref = useRef(null);
 
   const navigate = useNavigate();
 
@@ -18,10 +20,23 @@ function Login() {
     setMessage("");
   }
 
-  function handleLogin(event) {
+  function timeout(delay) {
+    return new Promise((res) => setTimeout(res, delay));
+  }
+
+  async function handleLogin(event) {
     event.preventDefault();
     setMessage("Iniciando sesión de " + form.email);
+    mailref.current.disabled = true;
+    passref.current.disabled = true;
+    await timeout(3000);
     dialogref.current.showModal();
+  }
+
+  function handleDialogClose() {
+    dialogref.current.close();
+    mailref.current.disabled = false;
+    passref.current.disabled = false;
   }
 
   return (
@@ -37,6 +52,7 @@ function Login() {
             </label>
             <input
               className="login__input"
+              ref={mailref}
               id="email"
               name="email"
               type="email"
@@ -53,6 +69,7 @@ function Login() {
             </label>
             <input
               className="login__input"
+              ref={passref}
               id="password"
               name="password"
               type="password"
@@ -71,18 +88,32 @@ function Login() {
           >
             Iniciar sesion
           </button>
+          {message && (
+            <p className="login__message">
+              No se esta validando los campos, pero si se deshabilitaron. Puse
+              un delay de 3 segundos para simular la validacion.
+            </p>
+          )}
           {message && <p className="login__message">{message}</p>}
         </form>
       </section>
-      <dialog className="login__dialog" aria-live="polite" ref={dialogref}>
+      <dialog
+        className="login__dialog"
+        aria-live="polite"
+        ref={dialogref}
+        onCancel={handleDialogClose}
+      >
         <div className="login__dialog__content">
-          <p>{message}</p>
-          <button
-            className="button"
-            onClick={() => {
-              dialogref.current.close();
-            }}
-          >
+          <p className="login__dialog__message">{message}</p>
+          <p className="login__dialog__disclaimer">
+            Tranquilo, si puede quitarlo presionando Escape.
+          </p>
+
+          <p className="login__dialog__disclaimer">
+            Vuelva atras con el boton o Escape y los campos se habilitaran
+            nuevamente. Apenas escriba en los campos, el mensaje desaparecerá.
+          </p>
+          <button className="button" onClick={handleDialogClose}>
             Cerrar
           </button>
         </div>

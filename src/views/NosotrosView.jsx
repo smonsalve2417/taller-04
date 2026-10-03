@@ -6,7 +6,7 @@ function NosotrosView() {
   return (
     <>
       <Header />
-      <Bottom />
+      <Bottom className="bottom--view" />
       <Footer />
     </>
   );
