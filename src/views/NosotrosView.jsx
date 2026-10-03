@@ -5,9 +5,7 @@ import Footer from "../components/Footer";
 function NosotrosView() {
   return (
     <>
-      <Header />
       <Bottom className="bottom--view" />
-      <Footer />
     </>
   );
 }

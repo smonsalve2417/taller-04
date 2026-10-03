@@ -5,9 +5,7 @@ import Footer from "../components/Footer";
 function CursosView() {
   return (
     <>
-      <Header />
       <Mid className="mid__view" />
-      <Footer />
     </>
   );
 }

@@ -7,11 +7,9 @@ import Footer from "../components/Footer";
 function Principal() {
   return (
     <div className="app-shell">
-      <Header />
       <Hero />
       <Mid />
       <Bottom />
-      <Footer />
     </div>
   );
 }

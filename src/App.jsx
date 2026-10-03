@@ -8,16 +8,21 @@ import ErrorPage from "./views/ErrorPage";
 import Login from "./views/Login";
 import CursosView from "./views/CursosView";
 import NosotrosView from "./views/NosotrosView";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Principal />} />
-      <Route path="/cursos" element={<CursosView />} />
-      <Route path="/nosotros" element={<NosotrosView />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/*" element={<ErrorPage />} />
-    </Routes>
+    <>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Principal />} />
+        <Route path="/cursos" element={<CursosView />} />
+        <Route path="/nosotros" element={<NosotrosView />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/*" element={<ErrorPage />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
